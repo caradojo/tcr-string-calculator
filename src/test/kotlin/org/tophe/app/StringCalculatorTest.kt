@@ -3,6 +3,8 @@ package org.tophe.app
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.params.ParameterizedTest
+import org.junit.jupiter.params.provider.CsvSource
 import org.mockito.Mockito.`when`
 import org.mockito.Mockito.mock
 
@@ -20,15 +22,14 @@ class StringCalculatorTest {
         assertThat(result).isEqualTo(0)
     }
 
-    @Test
-    fun `step1 a single number is evaluated as its value`() {
+    @ParameterizedTest
+    @CsvSource("1,1")
+    fun `step1 a single number is evaluated as its value`(inputNumberAsString: String, expectedNumber: Int) {
         // given
         val stringCalculator = StringCalculator()
-
         // when
-        val result = stringCalculator.add("1")
-
+        val result = stringCalculator.add(inputNumberAsString)
         // then
-        assertThat(result).isEqualTo(1)
+        assertThat(result).isEqualTo(expectedNumber)
     }
 }
