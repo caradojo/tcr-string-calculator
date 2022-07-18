@@ -23,7 +23,7 @@ class StringCalculatorTest {
     }
 
     @ParameterizedTest
-    @CsvSource("1,1", "2,2")
+    @CsvSource("1,1", "2,2", "13,13")
     fun `step1 a single number is evaluated as its value`(inputNumberAsString: String, expectedNumber: Int) {
         // given
         val stringCalculator = StringCalculator()
