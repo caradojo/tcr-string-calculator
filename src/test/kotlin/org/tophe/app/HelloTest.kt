@@ -20,9 +20,4 @@ class HelloTest {
         // then
         assertThat(mockedValue).isEqualTo(1234)
     }
-
-    @Test
-    fun raise() {
-        assertThat(true).isTrue()
-    }
 }
