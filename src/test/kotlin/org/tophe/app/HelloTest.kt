@@ -20,4 +20,16 @@ class HelloTest {
         // then
         assertThat(mockedValue).isEqualTo(1234)
     }
+
+    @Test
+    fun `step1 zero with empty param`() {
+        // given
+        val stringCalculator = StringCalculator()
+
+        // when
+        val result = stringCalculator.add("")
+
+        // then
+        assertThat(result).isEqualTo(0)
+    }
 }
