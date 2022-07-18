@@ -32,4 +32,16 @@ class HelloTest {
         // then
         assertThat(result).isEqualTo(0)
     }
+
+    @Test
+    fun `step1 a single number is evaluated as its value`() {
+        // given
+        val stringCalculator = StringCalculator()
+
+        // when
+        val result = stringCalculator.add("1")
+
+        // then
+        assertThat(result).isEqualTo(1)
+    }
 }
