@@ -34,7 +34,7 @@ class StringCalculatorTest {
     }
 
     @ParameterizedTest
-    @CsvSource("1,2:3", delimiter = ':')
+    @CsvSource("1,2:3", "2,3:5", delimiter = ':')
     fun `step1 several number separated with commas`(inputNumberAsString: String, expectedNumber: Int) {
         // given
         val stringCalculator = StringCalculator()
