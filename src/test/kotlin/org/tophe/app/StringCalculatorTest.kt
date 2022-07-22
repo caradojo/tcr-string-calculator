@@ -1,6 +1,7 @@
 package org.tophe.app
 
 import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.CsvSource
@@ -40,9 +41,11 @@ class StringCalculatorTest {
         // then
         assertThat(result).isEqualTo(expectedNumber)
     }
+
     @ParameterizedTest
-    @CsvSource("1,2:3", "2,3:5", "1,2,3:6", "10,2,0,20:32", delimiter = ':')
-    fun `step1 several number separated with commas`(inputNumberAsString: String, expectedNumber: Int) {
+    @Disabled
+    @CsvSource("1\\n2:3", delimiter = ':')
+    fun `step3 several number separated with new lines`(inputNumberAsString: String, expectedNumber: Int) {
         // given
         val stringCalculator = StringCalculator()
         // when
