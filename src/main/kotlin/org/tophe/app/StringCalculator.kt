@@ -7,7 +7,7 @@ class StringCalculator {
             return 0
         }
 
-        val values = Regex("//,\n").split(stringParams).last()
+        val values = Regex("//.\n").split(stringParams).last()
         return values
             .split(',', '\n')
             .map { it.toInt() }.sum()
