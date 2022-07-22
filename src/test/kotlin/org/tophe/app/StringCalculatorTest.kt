@@ -58,4 +58,10 @@ class StringCalculatorTest {
         // then
         assertThat(result.isFailure).isTrue()
     }
+
+    @Test
+    fun `define coma delimiter`() {
+        assertThat(StringCalculator().add("//,\n1")).isEqualTo(1)
+
+    }
 }
