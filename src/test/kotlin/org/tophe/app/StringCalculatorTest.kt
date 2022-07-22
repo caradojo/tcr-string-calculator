@@ -70,4 +70,14 @@ class StringCalculatorTest {
         assertThat(StringCalculator().add("//:\n1")).isEqualTo(1)
         assertThat(StringCalculator().add("//:\n1:2")).isEqualTo(3)
     }
+
+    @Test
+    @Disabled
+    fun `define unknown delimiter other case should raise`() {
+        // when
+        val runCatching = kotlin.runCatching { StringCalculator().add("//,\n1:2") }
+
+        // then
+        assertThat(runCatching.isFailure).isTrue()
+    }
 }
