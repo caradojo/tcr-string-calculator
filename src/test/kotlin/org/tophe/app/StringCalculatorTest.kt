@@ -1,6 +1,7 @@
 package org.tophe.app
 
 import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.CsvSource
@@ -62,6 +63,11 @@ class StringCalculatorTest {
     @Test
     fun `define coma delimiter`() {
         assertThat(StringCalculator().add("//,\n1")).isEqualTo(1)
+    }
 
+    @Test
+    @Disabled
+    fun `define coma delimiter other case`() {
+        assertThat(StringCalculator().add("//:\n1")).isEqualTo(1)
     }
 }
