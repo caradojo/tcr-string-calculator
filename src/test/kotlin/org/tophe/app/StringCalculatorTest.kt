@@ -43,8 +43,8 @@ class StringCalculatorTest {
     }
 
     @ParameterizedTest
-    @Disabled
-    @CsvSource("1\\n2:3", delimiter = ':')
+    @CsvSource("""1
+        |2:3""", delimiter = ':')
     fun `step3 several number separated with new lines`(inputNumberAsString: String, expectedNumber: Int) {
         // given
         val stringCalculator = StringCalculator()
