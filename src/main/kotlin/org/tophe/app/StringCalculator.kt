@@ -8,7 +8,6 @@ class StringCalculator {
         }
 
         return stringParams.split(',').map { it.toInt() }.sum()
-        return stringParams.toInt()
     }
 
 }
