@@ -68,5 +68,6 @@ class StringCalculatorTest {
     @Test
     fun `define coma delimiter other case`() {
         assertThat(StringCalculator().add("//:\n1")).isEqualTo(1)
+        assertThat(StringCalculator().add("//:\n1:2")).isEqualTo(3)
     }
 }
