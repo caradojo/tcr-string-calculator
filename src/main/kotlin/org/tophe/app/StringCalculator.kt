@@ -7,7 +7,7 @@ class StringCalculator {
             return 0
         }
 
-        return stringParams.split(',').map { it.toInt() }.sum()
+        return stringParams.split(',', '\n').map { it.toInt() }.sum()
     }
 
 }

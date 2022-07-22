@@ -42,15 +42,13 @@ class StringCalculatorTest {
         assertThat(result).isEqualTo(expectedNumber)
     }
 
-    @ParameterizedTest
-    @CsvSource("""1
-        |2:3""", delimiter = ':')
-    fun `step3 several number separated with new lines`(inputNumberAsString: String, expectedNumber: Int) {
+    @Test
+    fun `step3 several number separated with new lines`() {
         // given
         val stringCalculator = StringCalculator()
         // when
-        val result = stringCalculator.add(inputNumberAsString)
+        val result = stringCalculator.add("1\n2")
         // then
-        assertThat(result).isEqualTo(expectedNumber)
+        assertThat(result).isEqualTo(3)
     }
 }
