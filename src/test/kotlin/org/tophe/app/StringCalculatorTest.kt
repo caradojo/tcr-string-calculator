@@ -40,4 +40,14 @@ class StringCalculatorTest {
         // then
         assertThat(result).isEqualTo(expectedNumber)
     }
+    @ParameterizedTest
+    @CsvSource("1,2:3", "2,3:5", "1,2,3:6", "10,2,0,20:32", delimiter = ':')
+    fun `step1 several number separated with commas`(inputNumberAsString: String, expectedNumber: Int) {
+        // given
+        val stringCalculator = StringCalculator()
+        // when
+        val result = stringCalculator.add(inputNumberAsString)
+        // then
+        assertThat(result).isEqualTo(expectedNumber)
+    }
 }
